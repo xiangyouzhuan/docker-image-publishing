@@ -17,5 +17,6 @@ jobs:
     - name: Build the Docker image
       run: docker build . -t xiangyouzhuan/hello:latest
     - name: publish
-      run: docker login -u xiangyouzhuan -p ${{ secrets.PUBLISH_TO_DOCKERHUB }}
-      run: docker push xiangyouzhuan/hello:latest
+      run: |
+        docker login -u xiangyouzhuan -p ${{ secrets.PUBLISH_TO_DOCKERHUB }}
+        docker push xiangyouzhuan/hello:latest
